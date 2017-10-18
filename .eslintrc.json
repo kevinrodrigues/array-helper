@@ -1,0 +1,19 @@
+{
+    "extends": [
+        "airbnb-base",
+        "plugin:jasmine/recommended"
+    ],
+    "plugins": [
+        "jasmine"
+    ],
+    "rules": {
+        "func-names": ["error", "never"],
+        "indent": ["error", 4],
+        "comma-dangle": ["error", "never"],
+        "jasmine/no-suite-dupes": "off",
+        "jasmine/no-spec-dupes": "off",
+        "arrow-body-style": ["error", "always"],
+        "no-trailing-spaces": ["error", { "ignoreComments": true }],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+    }
+}

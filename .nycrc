@@ -1,0 +1,15 @@
+{
+    "check-coverage": true,
+    "branches": 100,
+    "functions": 100,
+    "statements": 100,
+    "lines": 100,
+    "cache": true,
+    "reporter": [
+        "text",
+        "lcov"
+    ],
+    "include": [
+        "src"
+    ]
+}
