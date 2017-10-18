@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "test": "nyc jasmine",
     "validate": "npm-run-all --parallel lint test build",
-    "precommit": "npm run validate",
+    "pre-commit": "npm run validate",
     "report-coverage": "cat /coverage/icov.info | codecov"
   },
   "files": [
