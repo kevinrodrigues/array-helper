@@ -75,7 +75,7 @@ If you get any failures at this point something is wrong and needs to be fixed. 
 
 If you'd like to play around with this library yourself please follow the steps below:
 
-1. Clone the project from [Github](https://github.com/kevinrodrigues) and `cd /your-path/array-helper-functions` folder
+1. Clone the project from [Github](https://github.com/kevinrodrigues/array-helper) and `cd /your-path/array-helper-functions` folder
 2. Run: `npm run validate` - To confirm Jasmine & eslint still pass OK and to build out the `dist` directory.
 
 ### Other

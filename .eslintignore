@@ -1,0 +1,4 @@
+#Ignore linting files we don't require. Build, coverage files.
+
+coverage
+dist
