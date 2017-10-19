@@ -16,7 +16,7 @@
     "precommit": "npm run validate",
     "commitmsg": "validate-commit-msg",
     "commit": "git-cz",
-    "report-coverage": "cat /coverage/icov.info | codecov"
+    "report-coverage": "cat ./coverage/lcov.info | codecov"
   },
   "files": [
     "dist",
