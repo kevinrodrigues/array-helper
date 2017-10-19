@@ -1,6 +1,6 @@
 {
   "name": "array-helper-functions",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Lightweight Array helper methods",
   "homepage": "https://github.com/kevinrodrigues/array-helper#readme",
   "main": "dist/index.js",
