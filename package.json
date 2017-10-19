@@ -6,7 +6,10 @@
   "main": "dist/index.js",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "babel --copy-files --out-dir dist src --ignore *spec.js src",
+    "build": "npm-run-all --parallel build:*",
+    "build:main": "babel --copy-files --out-dir dist --ignore *.spec.js src",
+    "build:umd": "webpack --output-filename index.umd.js",
+    "build:umd.min": "webpack --output-filename index.umd.min.js -p",
     "lint": "eslint .",
     "test": "nyc jasmine",
     "validate": "npm-run-all --parallel lint test build",
@@ -38,6 +41,7 @@
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "codecov": "^2.3.1",
     "commitizen": "^2.9.6",
@@ -50,7 +54,8 @@
     "npm-run-all": "^4.1.1",
     "nyc": "^11.2.1",
     "rimraf": "^2.6.2",
-    "validate-commit-msg": "^2.14.0"
+    "validate-commit-msg": "^2.14.0",
+    "webpack": "^3.8.1"
   },
   "config": {
     "commitizen": {
