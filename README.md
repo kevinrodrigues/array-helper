@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kevinrodrigues/array-helper.svg?branch=master)](https://travis-ci.org/kevinrodrigues/array-helper)
+
 # Array Helpers
 
 Some helpful array methods. Spent sometime using [Underscore](http://underscorejs.org/) in a previous project so I decided to build a helper library from scratch using some ideas behind this library. :honeybee:

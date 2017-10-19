@@ -9,7 +9,11 @@ branches:
   only:
     - master
 notifications:
-  email: false
+  email:
+    recipients:
+      - kevrodrigues116@gmail.com
+    on_success: never
+    on_failure: always
 before_script:
   - npm prune
 script:
