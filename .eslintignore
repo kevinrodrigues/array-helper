@@ -1,4 +1,7 @@
-#Ignore linting files we don't require. Build, coverage files.
+#Ignore linting files we don't require otherwise we get linting errors
+#everywhere. E.g dist, coverage & test.js files.
 
 coverage
 dist
+node_modules
+test.js
