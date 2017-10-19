@@ -1,5 +1,7 @@
 sudo: false
 language: node_js
+node_js:
+  - "6"
 cache:
   directories:
     - node_modules
@@ -11,8 +13,6 @@ notifications:
 before_script:
   - npm prune
 script:
-  - npm run check-coverage
   - npm run build
 after_success:
   - npm run report-coverage
-  - npm run semantic-release
