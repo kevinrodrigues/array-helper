@@ -10,6 +10,8 @@
     "build:main": "babel --copy-files --out-dir dist --ignore *.spec.js src",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
+    "cover": "nyc --reporter=lcov npm t",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "lint": "eslint .",
     "test": "nyc jasmine",
     "validate": "npm-run-all --parallel lint test build",
