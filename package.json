@@ -10,7 +10,6 @@
     "build:main": "babel --copy-files --out-dir dist --ignore *.spec.js src",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
-    "cover": "nyc --reporter=lcov npm t",
     "lint": "eslint .",
     "test": "nyc jasmine",
     "validate": "npm-run-all --parallel lint test build",
@@ -58,6 +57,10 @@
     "rimraf": "^2.6.2",
     "validate-commit-msg": "^2.14.0",
     "webpack": "^3.8.1"
+  },
+  "engines": {
+    "node": "6.x",
+    "npm": "3.x"
   },
   "config": {
     "commitizen": {
