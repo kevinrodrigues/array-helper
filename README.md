@@ -1,4 +1,7 @@
-[![Build Status](https://travis-ci.org/kevinrodrigues/array-helper.svg?branch=master)](https://travis-ci.org/kevinrodrigues/array-helper)
+[![travis build](https://img.shields.io/travis/kevinrodrigues/array-helper.svg?style=flat-square)](https://travis-ci.org/kevinrodrigues/array-helper)
+[![downloads](https://img.shields.io/npm/dm/array-helper-functions.svg?style=flat-square)](http://npm-stat.com/charts.html?package=array-helper-functions&from=2017-10-20)
+[![version](https://img.shields.io/npm/v/array-helper-functions.svg?style=flat-square)](http://npm.im/array-helper-functions)
+[![MIT License](https://img.shields.io/npm/l/array-helper-functions.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 # Array Helpers
 
