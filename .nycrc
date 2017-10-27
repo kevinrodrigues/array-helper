@@ -6,7 +6,7 @@
     "lines": 100,
     "cache": true,
     "reporter": [
-        "text",
+        "text-summary",
         "lcov"
     ],
     "include": [
