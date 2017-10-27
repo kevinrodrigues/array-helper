@@ -81,7 +81,7 @@ If you get any failures at this point something is wrong and needs to be fixed. 
 If you'd like to play around with this library yourself please follow the steps below:
 
 1. Clone the project from [Github](https://github.com/kevinrodrigues/array-helper) and `cd /your-path/array-helper-functions` folder
-2. Run: `npm run setup` - This will run `npm install` & `npm run validate`: this will run the lint, build & test configurations for you ensuring everything is working as expected.
+2. Run: `npm run setup` - This will run `npm install` & `npm run validate`: lint, build & test configurations for you ensuring everything is working as expected.
 
 ### Other
 
