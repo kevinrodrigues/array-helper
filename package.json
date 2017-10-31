@@ -28,7 +28,8 @@
     "Filter",
     "Flatten",
     "Compact",
-    "Partial"
+    "Partial",
+    "Every"
   ],
   "repository": {
     "type": "git",

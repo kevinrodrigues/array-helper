@@ -3,6 +3,30 @@
 const arrayHelper = require('../src/index');
 
 describe('`arrayHelper` library', () => {
+    describe('`isFunction`', () => {
+        it('should exist', () => {
+            expect(arrayHelper.isFunction).toBeDefined();
+        });
+
+        describe('when invoked', () => {
+            describe('AND `func` is `NOT` a valid function', () => {
+                it('should return `FALSE`', () => {
+                    const fakeMethod = 'I wish I could swim';
+
+                    expect(arrayHelper.isFunction(fakeMethod)).toBe(false);
+                });
+            });
+
+            describe('AND `func` is a valid function', () => {
+                it('should return `TRUE`', () => {
+                    const realMethod = () => {};
+
+                    expect(arrayHelper.isFunction(realMethod)).toBe(true);
+                });
+            });
+        });
+    });
+
     describe('`flatten` method', () => {
         it('should exist', () => {
             expect(arrayHelper.flatten).toBeDefined();
@@ -140,6 +164,63 @@ describe('`arrayHelper` library', () => {
                         this,
                         arrayItems
                     );
+                });
+            });
+        });
+    });
+
+    describe('`every`, method', () => {
+        it('should exist', () => {
+            expect(arrayHelper.every).toBeDefined();
+        });
+
+        describe('when invoked', () => {
+            describe('AND the parameter passed `func` is not a func type', () => {
+                it('should `THROW` an error', () => {
+                    const fakeMethod = 'I wish I could fly';
+                    const arrayItem = [1, 2, 3];
+
+                    expect(() => { arrayHelper.every(fakeMethod, arrayItem); }).toThrow();
+                });
+            });
+
+            describe('AND the parameter passed `array` is not a array type', () => {
+                it('should `THROW` an error', () => {
+                    const realMethod = () => {};
+                    const fakeArrayItem = 'Pilgrim\'s Progress';
+
+                    expect(() => { arrayHelper.every(realMethod, fakeArrayItem); }).toThrow();
+                });
+            });
+
+            describe('AND both parameters passed to the method are match both `function` & `array` tests correctly', () => {
+                it('should `NOT` throw', () => {
+                    const realMethod = () => {};
+                    const arrayItem = [1, 2, 3];
+
+                    expect(() => { arrayHelper.every(arrayItem, realMethod); }).not.toThrow();
+                });
+            });
+
+            describe('AND the given array does `NOT` pass the callback test', () => {
+                it('should return `FALSE`', () => {
+                    const arrayItem = [1, 2, 3];
+                    const isBigger = (element) => {
+                        return element >= 5;
+                    };
+
+                    expect(arrayHelper.every(arrayItem, isBigger)).toBe(false);
+                });
+            });
+
+            describe('AND the given array `DOES` pass the callback test', () => {
+                it('should return `TRUE`', () => {
+                    const arrayItem = [10, 5, 15];
+                    const isBigger = (element) => {
+                        return element >= 5;
+                    };
+
+                    expect(arrayHelper.every(arrayItem, isBigger)).toBe(true);
                 });
             });
         });

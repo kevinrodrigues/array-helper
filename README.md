@@ -27,6 +27,7 @@ npm install -g array-helper-functions
 - flatten
 - compact
 - partial
+- every
 
 ```
 
@@ -34,28 +35,61 @@ npm install -g array-helper-functions
 
 ```javascript
 const arrayHelper = require('array-helper-functions');
+```
+### `filter` [array, boolean]
 
-// filter(array, itemToFilter);
+```javascript
 let filter = arrayHelper.filter([1, 3, 100, 50], 50); // => [1, 3, 100];
+```
 
-// filter(array, itemToFilter, true); Deeply i.e [1, 3, 100, [[[50]]]; passing `true` as third parameter.
+Boolean: `true`
+Filters deep nested arrays.
+
+```javascript
 let filter = arrayHelper.filter([1, 3, 100, [[[50]]], 50, true); // => [1, 3, 100];
+```
 
-// flatten(array);
+### `flatten` [array, boolean]
+
+```javascript
 let flatten = arrayHelper.flatten([1, 3, 100, [50]]); // => [1, 3, 100, 50];
+```
 
-// flatten(array, true); Deeply i.e [1, 3, 100, [[[50]]]; passing `true` as second parameter.
+Boolean: `true`
+Flattens deep nested arrays.
+
+```javascript
 let flatten = arrayHelper.flatten([1, 3, 100, [[[50]]], true); // => [1, 3, 100, 50];
+```
 
-// compact(array); Removes Falsy values from array set.
+### `compact` [array]
+Removes Falsy values from array set.
+
+```javascript
 let compact = arrayHelper.compact([1, 2, 3, 100, null, 0]); // => [1, 2, 3, 100];
+```
+### `partial` [func, array]
+Invokes a given function with the provided array set passed.
 
-// partial(func, array);
+```javascript
 const foo = (a, b, c) => {
     return a + b + b;
 };
 
-let partial = array.partial(foo, [1, 2, 3]); // Invokes method `foo` with given arguments. => 6
+let partial = arrayHelper.partial(foo, [1, 2, 3]); // Invokes method `foo` with given arguments. => 6
+```
+### `every` [array, func]
+Executes the provided callback function once for each element present
+in the array until it finds one where the callback returns a falsy value.
+
+```javascript
+const isFooBigger = (element) => {
+    return element >= 5;
+};
+
+let every = arrayHelper.every([1, 2, 3], isFooBigger); // Returns false.
+let every = arrayHelper.every([10, 5, 7], isFooBigger); // Returns true.
+
 ```
 
 ## Project Setup
@@ -74,7 +108,6 @@ To get started with the project, start with this:
 
 If you get any failures at this point something is wrong and needs to be fixed. Remember,
 [Google](https://google.com) and [StackOverflow](https://stackoverflow.com) are your friends.. :raised_hands:
-
 
 ## Contributing
 

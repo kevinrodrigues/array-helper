@@ -1,3 +1,11 @@
+const isFunction = (func) => {
+    if (typeof func === 'function') {
+        return true;
+    }
+
+    return false;
+};
+
 /**
  * @flatten: flatten arrays going only one level deep. If `isDeep`
  * is set to true then deep nested arrays will flatten too.
@@ -62,18 +70,28 @@ const compact = (array) => {
  * @param  {} arguments
  */
 const partial = (func, arg) => {
-    if (typeof func === 'function') {
+    if (isFunction(func)) {
         return func.apply(this, arg);
     }
 
-    throw new Error('Error: Please pass in a function as the first parameter.');
+    throw new Error('Error: Please pass in a function.');
+};
+
+const every = (array, func) => {
+    if (isFunction(func) && Array.isArray(array)) {
+        return array.every(func);
+    }
+
+    throw new Error('Error: Please pass in a function.');
 };
 
 const mainExport = {
+    isFunction,
     flatten,
     filter,
     compact,
-    partial
+    partial,
+    every
 };
 
 // export default mainExport; // need to fix
