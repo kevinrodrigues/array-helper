@@ -193,7 +193,7 @@ describe('`arrayHelper` library', () => {
                 });
             });
 
-            describe('AND both parameters passed to the method are match both `function` & `array` tests correctly', () => {
+            describe('AND both parameters passed to the method match both `function` & `array` tests correctly', () => {
                 it('should `NOT` throw', () => {
                     const realMethod = () => {};
                     const arrayItem = [1, 2, 3];

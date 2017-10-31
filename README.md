@@ -36,7 +36,7 @@ npm install -g array-helper-functions
 ```javascript
 const arrayHelper = require('array-helper-functions');
 ```
-### `filter` [array, boolean]
+### `filter` [array, filterItem, boolean]
 
 ```javascript
 let filter = arrayHelper.filter([1, 3, 100, 50], 50); // => [1, 3, 100];
