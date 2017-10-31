@@ -180,7 +180,7 @@ describe('`arrayHelper` library', () => {
                     const fakeMethod = 'I wish I could fly';
                     const arrayItem = [1, 2, 3];
 
-                    expect(() => { arrayHelper.every(fakeMethod, arrayItem); }).toThrow();
+                    expect(() => { arrayHelper.every(arrayItem, fakeMethod); }).toThrow();
                 });
             });
 
@@ -189,7 +189,7 @@ describe('`arrayHelper` library', () => {
                     const realMethod = () => {};
                     const fakeArrayItem = 'Pilgrim\'s Progress';
 
-                    expect(() => { arrayHelper.every(realMethod, fakeArrayItem); }).toThrow();
+                    expect(() => { arrayHelper.every(fakeArrayItem, realMethod); }).toThrow();
                 });
             });
 
@@ -198,7 +198,7 @@ describe('`arrayHelper` library', () => {
                     const realMethod = () => {};
                     const arrayItem = [1, 2, 3];
 
-                    expect(() => { arrayHelper.every(arrayItem, realMethod); }).not.toThrow();
+                    expect(() => { arrayHelper.every(realMethod, arrayItem); }).not.toThrow();
                 });
             });
 
@@ -209,7 +209,7 @@ describe('`arrayHelper` library', () => {
                         return element >= 5;
                     };
 
-                    expect(arrayHelper.every(arrayItem, isBigger)).toBe(false);
+                    expect(arrayHelper.every(isBigger, arrayItem)).toBe(false);
                 });
             });
 
@@ -220,7 +220,7 @@ describe('`arrayHelper` library', () => {
                         return element >= 5;
                     };
 
-                    expect(arrayHelper.every(arrayItem, isBigger)).toBe(true);
+                    expect(arrayHelper.every(isBigger, arrayItem)).toBe(true);
                 });
             });
         });

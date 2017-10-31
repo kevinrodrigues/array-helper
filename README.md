@@ -78,7 +78,7 @@ const foo = (a, b, c) => {
 
 let partial = arrayHelper.partial(foo, [1, 2, 3]); // Invokes method `foo` with given arguments. => 6
 ```
-### `every` [array, func]
+### `every` [func, array]
 Executes the provided callback function once for each element present
 in the array until it finds one where the callback returns a falsy value.
 
@@ -87,8 +87,8 @@ const isFooBigger = (element) => {
     return element >= 5;
 };
 
-let every = arrayHelper.every([1, 2, 3], isFooBigger); // Returns false.
-let every = arrayHelper.every([10, 5, 7], isFooBigger); // Returns true.
+let every = arrayHelper.every(isFooBigger, [1, 2, 3]); // Returns false.
+let every = arrayHelper.every(isFooBigger, [10, 5, 7]); // Returns true.
 
 ```
 

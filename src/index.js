@@ -77,7 +77,7 @@ const partial = (func, arg) => {
     throw new Error('Error: Please pass in a function.');
 };
 
-const every = (array, func) => {
+const every = (func, array) => {
     if (isFunction(func) && Array.isArray(array)) {
         return array.every(func);
     }
