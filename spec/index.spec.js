@@ -3,6 +3,10 @@
 const arrayHelper = require('../src/index');
 
 describe('`arrayHelper` library', () => {
+    it('should exist', () => {
+        expect(arrayHelper).toBeDefined();
+    });
+
     describe('`isFunction`', () => {
         it('should exist', () => {
             expect(arrayHelper.isFunction).toBeDefined();
@@ -221,6 +225,40 @@ describe('`arrayHelper` library', () => {
                     };
 
                     expect(arrayHelper.every(isBigger, arrayItem)).toBe(true);
+                });
+            });
+        });
+    });
+
+    describe('`object`, method', () => {
+        it('should exist', () => {
+            expect(arrayHelper.object).toBeDefined();
+        });
+
+        describe('when invoked', () => {
+            describe('AND the param `array` is `NOT` an array', () => {
+                it('should throw an `ERROR`', () => {
+                    const fakeArrayItem = 'Bloodborne';
+
+                    expect(() => { arrayHelper.object(fakeArrayItem); }).toThrow();
+                });
+            });
+
+            describe('AND the param `array` `IS` an array', () => {
+                it('should `NOT` throw', () => {
+                    const realArrayItem = ['foo', 'baz', 'fizz'];
+
+                    expect(() => { arrayHelper.object(realArrayItem); }).not.toThrow();
+                });
+
+                it('should return the array as an `object`', () => {
+                    const arrayItem = ['foo', 'baz', 'fizz'];
+
+                    expect(arrayHelper.object(arrayItem)).toEqual({
+                        0: 'foo',
+                        1: 'baz',
+                        2: 'fizz'
+                    });
                 });
             });
         });

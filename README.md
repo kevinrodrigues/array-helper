@@ -28,6 +28,7 @@ npm install -g array-helper-functions
 - compact
 - partial
 - every
+- object
 
 ```
 
@@ -89,7 +90,14 @@ const isFooBigger = (element) => {
 
 let every = arrayHelper.every(isFooBigger, [1, 2, 3]); // Returns false.
 let every = arrayHelper.every(isFooBigger, [10, 5, 7]); // Returns true.
+```
 
+### `object` [array]
+Converts arrays to objects.
+
+```javascript
+let object = arrayHelper.object([1, 2, 3]); // => {'0': 1, '1': 2, '2': 3}
+let object = arrayHelper.object(['foo', 'baz', 'fizz']); // => { '0': 'foo', '1': 'baz', '2': 'fizz' }
 ```
 
 ## Project Setup

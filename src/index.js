@@ -77,6 +77,13 @@ const partial = (func, arg) => {
     throw new Error('Error: Please pass in a function.');
 };
 
+/**
+ * Executes the provided callback function once for each element present
+ * in the array until it finds one where the callback returns a falsy value.
+ * 
+ * @param {*} func 
+ * @param {*} array 
+ */
 const every = (func, array) => {
     if (isFunction(func) && Array.isArray(array)) {
         return array.every(func);
@@ -85,13 +92,31 @@ const every = (func, array) => {
     throw new Error('Error: Please pass in a function.');
 };
 
+/**
+ * Converts a given array element to a key value pair object.
+ * 
+ * @param {*} array
+ */
+const object = (array) => {
+    if (Array.isArray(array)) {
+        return array.reduce((acc, cur, i) => {
+            acc[i] = cur;
+
+            return acc;
+        }, {});
+    }
+
+    throw new Error('Error: Please pass in an array.');
+};
+
 const mainExport = {
     isFunction,
     flatten,
     filter,
     compact,
     partial,
-    every
+    every,
+    object
 };
 
 // export default mainExport; // need to fix
