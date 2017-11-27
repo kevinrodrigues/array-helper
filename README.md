@@ -29,6 +29,7 @@ npm install -g array-helper-functions
 - partial
 - every
 - object
+- map
 
 ```
 
@@ -92,12 +93,22 @@ let every = arrayHelper.every(isFooBigger, [1, 2, 3]); // Returns false.
 let every = arrayHelper.every(isFooBigger, [10, 5, 7]); // Returns true.
 ```
 
-### `object` [array]
+### `object` [array, list]
 Converts arrays to objects.
 
 ```javascript
 let object = arrayHelper.object([1, 2, 3]); // => {'0': 1, '1': 2, '2': 3}
 let object = arrayHelper.object(['foo', 'baz', 'fizz']); // => { '0': 'foo', '1': 'baz', '2': 'fizz' }
+
+### `map` [array]
+Returns a new array from a tranformation applied by a function.
+
+const multiply = (num) => {
+    return num * 2;
+};
+
+let map = arrayHelper.map([1, 2, 3], multiply); // => [2, 4, 6]
+
 ```
 
 ## Project Setup

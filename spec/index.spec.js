@@ -263,4 +263,32 @@ describe('`arrayHelper` library', () => {
             });
         });
     });
+
+    describe('`map` method', () => {
+        it('should exist', () => {
+            expect(arrayHelper.map).toBeDefined();
+        });
+
+        describe('when invoked', () => {
+            describe('AND both array & function parameter are truthy', () => {
+                it('should return a new array item', () => {
+                    const realArrayItem = [1, 2, 3];
+                    const multiply = (num) => {
+                        return num * 2;
+                    };
+
+                    expect(arrayHelper.map(realArrayItem, multiply)).toEqual([2, 4, 6]);
+                });
+            });
+
+            describe('AND either the array or function parameter are falsy', () => {
+                it('should `throw` an error', () => {
+                    const fakeArrayItem = 'Array! I\'m not';
+                    const fakeMethod = 'As time goes by.';
+
+                    expect(() => { arrayHelper.map(fakeArrayItem, fakeMethod); }).toThrow();
+                });
+            });
+        });
+    });
 });

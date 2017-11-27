@@ -109,6 +109,28 @@ const object = (array) => {
     throw new Error('Error: Please pass in an array.');
 };
 
+/**
+ * Map and return a `new` array set.
+ * 
+ * @param {*} array 
+ * @param {*} iteratee 
+ */
+const map = (array, func) => {
+    let newArrayInstance;
+
+    if (Array.isArray(array) && isFunction(func)) {
+        newArrayInstance = [];
+
+        array.forEach((el) => {
+            newArrayInstance.push(func.call(this, el));
+        });
+
+        return newArrayInstance;
+    }
+
+    throw new Error('Error: Please pass in valid arguments');
+};
+
 const mainExport = {
     isFunction,
     flatten,
@@ -116,7 +138,8 @@ const mainExport = {
     compact,
     partial,
     every,
-    object
+    object,
+    map
 };
 
 // export default mainExport; // need to fix
