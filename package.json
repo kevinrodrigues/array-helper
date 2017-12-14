@@ -29,7 +29,8 @@
     "Flatten",
     "Compact",
     "Partial",
-    "Every"
+    "Every",
+    "Map"
   ],
   "repository": {
     "type": "git",

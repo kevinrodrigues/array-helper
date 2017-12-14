@@ -271,6 +271,13 @@ describe('`arrayHelper` library', () => {
 
         describe('when invoked', () => {
             describe('AND both array & function parameter are truthy', () => {
+                it('should NOT `throw` an error', () => {
+                    const realArrayItem = [1, 2, 3];
+                    const realMethod = () => {};
+
+                    expect(() => { arrayHelper.map(realArrayItem, realMethod); }).not.toThrow();
+                });
+
                 it('should return a new array item', () => {
                     const realArrayItem = [1, 2, 3];
                     const multiply = (num) => {
